@@ -39,7 +39,7 @@ The algorithm works by reducing the puzzle from nxn to 1x1 solving each size in 
 Given an nxn size grid the algorithm will position blocks 1 to n - 2 into their appropriate place in the row, the final two blocks are placed such that block n - 1 is in position n in the first row, and the block n is in the second row at position n. Then the blocks are rotated into position.
 There is the possibility that n - 1 and n will be in the reverse order and this is handled by doing a 2x3 rotation set (detailed later) to fix the ordering. But now the first row will be complete.
 
-The algorithm will the proceed to solve the first column in a very similar way, position 1 to n - 2 into the appropriate place and then place n - 1 at position n in the first column and block n at position n in the second row and perform a right rotation. The same order error can occur and a mirrored set of moves fixes this problem as well.
+The algorithm will the proceed to solve the first column in a very similar way, position 1 to n - 2 into the appropriate place and then place n - 1 at position n in the first column and block n at position n in the second column and perform a right rotation. The same order error can occur and a mirrored set of moves fixes this problem as well.
 
 Now however we have completed the first row and first column and successfully reduced the problem to a (n - 1)x(n - 1) square. So we rinse and repeat while n > 2. When n == 2 only the row is solved and the last block is flipped with the empty space as needed. If an order error occurs at this stage the puzzle is unsolveable and the intial configuration was an invalid one.
 
